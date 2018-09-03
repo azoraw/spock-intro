@@ -1,4 +1,4 @@
-package static_method;
+package com.azoraw.spockintro.static_method;
 
 public class StaticMethods {
 
