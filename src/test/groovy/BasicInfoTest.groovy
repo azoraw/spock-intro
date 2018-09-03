@@ -1,3 +1,4 @@
+import com.azoraw.spockintro.privateField.ProtectedClass
 import spock.lang.Specification
 
 class BasicInfoTest extends Specification {
@@ -22,6 +23,14 @@ class BasicInfoTest extends Specification {
 
         expect:                 //PRO TIP: use for functional methods
         Math.max(1, 2) == 2
+    }
+
+    def "groovy features"() {
+        when:
+        def privateClass = new ProtectedClass()
+
+        then:
+        privateClass.superPrivateField /*== true*/
     }
 
 

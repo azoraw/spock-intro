@@ -23,7 +23,7 @@ class DataDrivenTest extends Specification {
         '1234567Aa!'  | true
         '1234567Aa@'  | true
         '1234567Aa#'  | true
-        '1234567Aa\$' | true
+        '1234567Aa$'  | true
         '1234567Aa%'  | true
         '1234567Aa^'  | true
         '1234567Aa&'  | true
@@ -52,4 +52,21 @@ class DataDrivenTest extends Specification {
         '1234567Aa/'  | true
         '1234567Aa`'  | true
     }
+
+    @Unroll
+    def "#a + #b equals #result"() {
+        expect:
+        sum(a, b) == result
+
+        where:
+        a   | b || result
+        1   | 2 || 3
+        123 | 2 || 125
+
+    }
+
+    def sum(def a, def b) {
+        a + b
+    }
+
 }
