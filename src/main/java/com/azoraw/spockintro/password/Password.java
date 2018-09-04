@@ -6,9 +6,9 @@ public class Password {
         "}$";          //very secure password: minimum 10 chars, 1 upper, 1 lower, 1 special, 1 number
 
 
-    public void savePassword(String password) {
+    public void savePassword(String passsword) {
 
-        if(isPasswordStrong(password)) {
+        if(isPasswordStrong(passsword)) {
             //save password
         }
         else {

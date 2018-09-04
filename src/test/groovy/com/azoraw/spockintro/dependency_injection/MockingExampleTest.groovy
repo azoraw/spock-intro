@@ -25,6 +25,16 @@ class MockingExampleTest extends Specification {
 
         then:
         1 * childMock.setNumberOfToys(1)
+
+        //cardinality:
+        /*
+         0 * childMock.getSomeObject()
+         1 * childMock.setNumberOfToys(1)
+         (1..3) * childMock.setNumberOfToys(1)
+         (1.._) * childMock.setNumberOfToys(1)
+         (_..3) * childMock.setNumberOfToys(1)
+         _ * childMock.setNumberOfToys(1)  //any number, including 0. WHAT IS IT FOR?!?
+         */
     }
 
     def "specific mock test"() {
