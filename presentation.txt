@@ -4,3 +4,5 @@
 4. setup: build.gradle
 5. framework terminology: HelloSpock  // i == 1
 6. data driven testing
+7. Mocking
+
