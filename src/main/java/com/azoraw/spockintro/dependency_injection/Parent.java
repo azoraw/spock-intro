@@ -12,7 +12,7 @@ public class Parent {
         child.setNumberOfToys(child.getNumberOfToys() + 1);
     }
 
-    public String giveChildAToyAndSeeResponse(int numberOfToys) {
-       return child.giveToy(numberOfToys).getChildMsg();
+    public String giveChildAToysAndSeeResponse(int numberOfToys) {
+       return child.playWithToys(numberOfToys).getChildMsg();
     }
 }
