@@ -17,6 +17,5 @@ class InvocationOrderTest extends Specification{
         someInt == 1
         someInt2 == 2
         someInt3 == 3
-
     }
 }

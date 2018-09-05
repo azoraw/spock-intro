@@ -3,7 +3,7 @@
     -JUnit/TestNG
     -EasyMock/JMock/Mockito
     -Cucomber/JBehave (Behaviour-Driven Development)
-3. http://meetspock.appspot.com/?id=9001 //spock console
+3. http://meetspock.appspot.com       //spock console
 4. setup: build.gradle
 5. framework terminology: HelloSpock  // i == 1
 6. data driven testing
@@ -14,4 +14,10 @@
     -Classes with side effects, and
     -Classes with non-deterministic behavior.
 8. other things that spock can do : groovy mocking, annotations (ignoreIf, timeout), Spy
+9. static mocking
+10.urls:
+
+https://github.com/azoraw/spock-intro/
+http://spockframework.org/
+https://semaphoreci.com/community/tutorials/stubbing-and-mocking-in-java-with-the-spock-testing-framework
 
