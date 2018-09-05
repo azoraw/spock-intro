@@ -13,5 +13,5 @@
     -Classes that are slow,
     -Classes with side effects, and
     -Classes with non-deterministic behavior.
-8. other things that spock can do : groovy mocking, annotations (ignoreIf, timeout)
+8. other things that spock can do : groovy mocking, annotations (ignoreIf, timeout), Spy
 

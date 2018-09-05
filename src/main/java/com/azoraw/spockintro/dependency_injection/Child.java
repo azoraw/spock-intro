@@ -5,7 +5,6 @@ public interface Child {
     int getSomeInt();
     boolean getSomeBoolean();
 
-    int getNumberOfToys();
-    void setNumberOfToys(Integer numberOfToys);
-    ChildResponse playWithToys(Integer numberOfToys);
+    void sleep();
+    Toy getToy(String toyType);
 }

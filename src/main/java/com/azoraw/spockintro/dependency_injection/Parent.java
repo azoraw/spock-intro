@@ -8,11 +8,11 @@ public class Parent {
         this.child = child;
     }
 
-    public void giveChildAToy() {
-        child.setNumberOfToys(child.getNumberOfToys() + 1);
+    public void readChildABook() {
+        child.sleep();
     }
 
-    public String giveChildAToysAndSeeResponse(int numberOfToys) {
-       return child.playWithToys(numberOfToys).getChildMsg();
+    public String getToyName(String toyType) {
+       return child.getToy(toyType).getName();
     }
 }

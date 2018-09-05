@@ -21,33 +21,33 @@ class MockingExampleTest extends Specification {
         def parent = new Parent(childMock)
 
         when:
-        parent.giveChildAToy()
+        parent.readChildABook()
 
         then:
-        1 * childMock.setNumberOfToys(1)
+        1 * childMock.sleep()
 
         //cardinality:
         /*
-         0 * childMock.getSomeObject()
-         1 * childMock.setNumberOfToys(1)
-         (1..3) * childMock.setNumberOfToys(1)
-         (1.._) * childMock.setNumberOfToys(1)
-         (_..3) * childMock.setNumberOfToys(1)
-         _ * childMock.setNumberOfToys(1)  //any number, including 0. WHAT IS IT FOR?!?
+         0 * childMock.sleep(1)
+         1 * childMock.sleep(1)
+         (1..3) * childMock.sleep(1)
+         (1.._) * childMock.sleep(1)
+         (_..3) * childMock.sleep(1)
+         _ * childMock.sleep(1)  //any number, including 0. WHAT IS IT FOR?!?
          */
     }
 
     def "specific mock test"() {
         given:
         def specificMock = Mock(Child) {
-            playWithToys(1) >> new ChildResponse('Thank you!')
-            playWithToys(10) >> Mock(ChildResponse) {
-                getChildMsg() >> 'WOOOOW'
+            getToy('teddy bear') >> new Toy('Winnie the Pooh')
+            getToy('monster truck') >> Mock(Toy) {
+                getName() >> 'Wroooom Wroooom'
             }
-            playWithToys(*_) >> {                               //wildcards: _, !null, _ as Integer,
-                Integer numberOfToys ->                         //GROOVY CLOSURE
-                    Mock(ChildResponse) {
-                        getChildMsg() >> 'thanks for ' + numberOfToys + ' toys'
+            getToy(*_) >> {                               //wildcards: _, !null, _ as Integer,
+                String toyType ->                         //GROOVY CLOSURE
+                    Mock(Toy) {
+                        getName() >> 'toy'
                     }
             }
         }
@@ -55,15 +55,15 @@ class MockingExampleTest extends Specification {
         def parent = new Parent(specificMock)
 
         when:
-        def childResponse = parent.giveChildAToysAndSeeResponse(1)
-        def childResponse2 = parent.giveChildAToysAndSeeResponse(10)
-        def childResponse3 = parent.giveChildAToysAndSeeResponse(7)
+        def childResponse = parent.getToyName('teddy bear')
+        def childResponse2 = parent.getToyName('monster truck')
+        def childResponse3 = parent.getToyName('action figure')
 
         then:
         childResponse
-        childResponse == 'Thank you!'
-        childResponse2 == 'WOOOOW'
-        childResponse3 == 'thanks for 7 toys'
+        childResponse == 'Winnie the Pooh'
+        childResponse2 == 'Wroooom Wroooom'
+        childResponse3 == 'toy'
     }
 
     def "throwing exception example"() {
