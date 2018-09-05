@@ -47,7 +47,7 @@ class MockingExampleTest extends Specification {
             getToy(*_) >> {                               //wildcards: _, !null, _ as Integer,
                 String toyType ->                         //GROOVY CLOSURE
                     Mock(Toy) {
-                        getName() >> 'toy'
+                        getName() >> toyType
                     }
             }
         }
@@ -63,7 +63,7 @@ class MockingExampleTest extends Specification {
         childResponse
         childResponse == 'Winnie the Pooh'
         childResponse2 == 'Wroooom Wroooom'
-        childResponse3 == 'toy'
+        childResponse3 == 'action figure'
     }
 
     def "throwing exception example"() {
