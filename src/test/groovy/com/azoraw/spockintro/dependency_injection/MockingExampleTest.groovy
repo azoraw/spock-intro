@@ -28,12 +28,12 @@ class MockingExampleTest extends Specification {
 
         //cardinality:
         /*
-         0 * childMock.sleep(1)
-         1 * childMock.sleep(1)
-         (1..3) * childMock.sleep(1)
-         (1.._) * childMock.sleep(1)
-         (_..3) * childMock.sleep(1)
-         _ * childMock.sleep(1)  //any number, including 0. WHAT IS IT FOR?!?
+         0 * childMock.sleep()
+         1 * childMock.sleep()
+         (1..3) * childMock.sleep()
+         (1.._) * childMock.sleep()
+         (_..3) * childMock.sleep()
+         _ * childMock.sleep()  //any number, including 0. WHAT IS IT FOR?!?
          */
     }
 
@@ -66,17 +66,4 @@ class MockingExampleTest extends Specification {
         childResponse3 == 'action figure'
     }
 
-    def "throwing exception example"() {
-        given:
-        childMock.getSomeObject() >> {
-            throw new IllegalStateException('no object for you')
-        }
-
-        when:
-        childMock.getSomeObject()
-
-        then:
-        def exception = thrown(IllegalStateException)
-        exception.message == 'no object for you'
-    }
 }

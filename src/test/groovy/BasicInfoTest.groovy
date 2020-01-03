@@ -1,4 +1,4 @@
-import com.azoraw.spockintro.private_field.ProtectedClass
+import com.azoraw.spockintro.private_field.SomeClass
 import spock.lang.Specification
 
 class BasicInfoTest extends Specification {
@@ -27,10 +27,10 @@ class BasicInfoTest extends Specification {
 
     def "groovy features"() {
         when:
-        def privateClass = new ProtectedClass()
+        def someClass = new SomeClass()
 
         then:
-        privateClass.superPrivateField /*== true*/
+        someClass.somePrivateField /*== true*/
     }
 
 

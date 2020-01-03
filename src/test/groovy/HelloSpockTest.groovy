@@ -10,7 +10,7 @@ class HelloSpockTest extends Specification {
         i++
 
         then:
-        i == 2 //yoda conditions also works
+        i == 2
     }
 
 }

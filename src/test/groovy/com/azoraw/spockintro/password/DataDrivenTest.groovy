@@ -6,51 +6,51 @@ import spock.lang.Unroll
 class DataDrivenTest extends Specification {
 
     @Unroll
-    def "check regex if #password is #strong"() {
+    def "check regex if #password is #weak"() {
         given:
-        def passwordValidator = new Password()
+        def passwordService = new PasswordService()
 
         expect:
-        passwordValidator.isPasswordStrong(password) == strong
+        passwordService.isPasswordWeak(password) == weak
 
         where:
-        password      | strong
-        '123456Aa!'   | false
-        '12345678a!'  | false
-        '12345678A!'  | false
-        'AAAAbbbb!'   | false
-        '1234567Aa~'  | true
-        '1234567Aa!'  | true
-        '1234567Aa@'  | true
-        '1234567Aa#'  | true
-        '1234567Aa$'  | true
-        '1234567Aa%'  | true
-        '1234567Aa^'  | true
-        '1234567Aa&'  | true
-        '1234567Aa*'  | true
-        '1234567Aa('  | true
-        '1234567Aa)'  | true
-        '1234567Aa_'  | true
-        '1234567Aa-'  | true
-        '1234567Aa+'  | true
-        '1234567Aa='  | true
-        '1234567Aa{'  | true
-        '1234567Aa}'  | true
-        '1234567Aa['  | true
-        '1234567Aa]'  | true
-        '1234567Aa\\' | true
-        '1234567Aa|'  | true
-        '1234567Aa;'  | true
-        '1234567Aa:'  | true
-        '1234567Aa\'' | true
-        '1234567Aa"'  | true
-        '1234567Aa<'  | true
-        '1234567Aa>'  | true
-        '1234567Aa,'  | true
-        '1234567Aa.'  | true
-        '1234567Aa?'  | true
-        '1234567Aa/'  | true
-        '1234567Aa`'  | true
+        password      | weak
+        '123456Aa!'   | true
+        '12345678a!'  | true
+        '12345678A!'  | true
+        'AAAAbbbb!'   | true
+        '1234567Aa~'  | false
+        '1234567Aa!'  | false
+        '1234567Aa@'  | false
+        '1234567Aa#'  | false
+        '1234567Aa$'  | false
+        '1234567Aa%'  | false
+        '1234567Aa^'  | false
+        '1234567Aa&'  | false
+        '1234567Aa*'  | false
+        '1234567Aa('  | false
+        '1234567Aa)'  | false
+        '1234567Aa_'  | false
+        '1234567Aa-'  | false
+        '1234567Aa+'  | false
+        '1234567Aa='  | false
+        '1234567Aa{'  | false
+        '1234567Aa}'  | false
+        '1234567Aa['  | false
+        '1234567Aa]'  | false
+        '1234567Aa\\' | false
+        '1234567Aa|'  | false
+        '1234567Aa;'  | false
+        '1234567Aa:'  | false
+        '1234567Aa\'' | false
+        '1234567Aa"'  | false
+        '1234567Aa<'  | false
+        '1234567Aa>'  | false
+        '1234567Aa,'  | false
+        '1234567Aa.'  | false
+        '1234567Aa?'  | false
+        '1234567Aa/'  | false
+        '1234567Aa`'  | false
     }
 
     @Unroll
