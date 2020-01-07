@@ -11,4 +11,4 @@ basic introduction what is spock framework
 - Exceptions Testing (ExceptionExampleTest)
 - Mocking (MockingExampleTest)
 - Behavioral Testing (InvocationOrderTest)
-- Integration Capabilities (Spring, Embedded DB)
+- Integration Capabilities (Spring, Embedded DB, Jenkins)
