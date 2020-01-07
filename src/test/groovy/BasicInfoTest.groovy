@@ -1,4 +1,4 @@
-import com.azoraw.spockintro.private_field.SomeClass
+import com.azoraw.spockintro.example.SomeClass
 import spock.lang.Specification
 
 class BasicInfoTest extends Specification {
