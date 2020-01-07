@@ -1,11 +1,11 @@
-import com.azoraw.spockintro.dependency_injection.Child
+import com.azoraw.spockintro.example.SomeInterface
 import spock.lang.Specification
 
 class InvocationOrderTest extends Specification{
 
     def "should give different value each time"(){
         given:
-        def child = Mock(Child)
+        def child = Mock(SomeInterface)
         child.getSomeInt() >>> [1,2,3]
 
         when:
