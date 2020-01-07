@@ -11,7 +11,7 @@ class DataDrivenTest extends Specification {
         def passwordService = new PasswordService()
 
         expect:
-        passwordService.isPasswordWeak(password) == weak
+        passwordService.isWeak(password) == weak
 
         where:
         password      | weak

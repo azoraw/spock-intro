@@ -7,17 +7,14 @@ public class PasswordService {
 
 
     public void savePassword(String password) {
-
-        if (isPasswordWeak(password)) {
+        if (isWeak(password)) {
             throw new IllegalArgumentException("password is weak");
         }
         //save password
     }
 
-
-    private boolean isPasswordWeak(String password) {
+    private boolean isWeak(String password) {
         return !password.matches(PASSWORD_REGEX);
     }
-
 
 }

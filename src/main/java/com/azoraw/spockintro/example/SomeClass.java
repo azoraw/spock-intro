@@ -1,4 +1,4 @@
-package com.azoraw.spockintro.private_field;
+package com.azoraw.spockintro.example;
 
 class SomeClass {
     private static boolean somePrivateField = true;

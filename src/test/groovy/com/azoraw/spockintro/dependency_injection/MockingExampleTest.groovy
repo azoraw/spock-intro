@@ -1,19 +1,22 @@
 package com.azoraw.spockintro.dependency_injection
 
+import com.azoraw.spockintro.example.SomeInterface
 import spock.lang.Specification
 
 class MockingExampleTest extends Specification {
 
-    def childMock = Mock(Child)
+    def childMock = Mock(Child)  //one mock for different tests
     //Child childMock = Mock()   //also works
+
+    def  exampleMock = Mock(SomeInterface)
 
     def "mock test"() {
         expect:
-        childMock.getSomeInt() == 0
-        childMock.getSomeObject() == null
+        exampleMock.getSomeInt() == 0
+        exampleMock.getSomeObject() == null
 
-        childMock.getSomeBoolean() == false
-        !childMock.getSomeBoolean()           //simpler but is it clearer?
+        exampleMock.getSomeBoolean() == false
+        !exampleMock.getSomeBoolean()           //simpler but is it clearer?
     }
 
     def "mock usage test"() {                 //spring DI
