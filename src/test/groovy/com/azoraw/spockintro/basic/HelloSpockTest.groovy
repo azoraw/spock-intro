@@ -1,3 +1,5 @@
+package com.azoraw.spockintro.basic
+
 import spock.lang.Specification
 
 class HelloSpockTest extends Specification {

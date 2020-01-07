@@ -1,3 +1,5 @@
+package com.azoraw.spockintro.dependency_injection
+
 import com.azoraw.spockintro.example.SomeInterface
 import spock.lang.Specification
 

@@ -1,3 +1,5 @@
+package com.azoraw.spockintro.basic
+
 import com.azoraw.spockintro.example.SomeClass
 import spock.lang.Specification
 
